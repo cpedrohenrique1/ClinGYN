@@ -17,15 +17,53 @@ namespace PC{
     {
         this->nomeCompleto = nomeCompleto;
         if (peso <= 0){
-            throw QString("Erro: Peso menor ou igual a 0");
+            throw QString("Peso menor ou igual a 0");
         }
         this->peso = peso;
         if (altura <= 0){
-            throw QString("Erro: Altura menor ou igual a 0");
+            throw QString("Altura menor ou igual a 0");
         }
         this->altura = altura;
         this->sexo = sexo;
     }
+
+    void Paciente::setNome(QString newNome){
+        this->nomeCompleto = newNome;
+    }
+
+    QString Paciente::getNome()const{
+        return this->nomeCompleto;
+    }
+
+    void Paciente::setAltura(float newAltura){
+        if (newAltura <= 0 )
+            throw QString("Altura nao pode ser igual ou menor que 0");
+        this->altura = newAltura;
+    }
+
+    float Paciente::getAltura()const{
+        return this->altura;
+    }
+
+    void Paciente::setPeso(int newPeso){
+        if (newPeso <= 0){
+            throw QString("Peso nao pode ser menor ou igual a 0");
+        }
+        this->peso = newPeso;
+    }
+
+    int Paciente::getPeso()const{
+        return this->peso;
+    }
+
+    void Paciente::setSexo(QString newSexo){
+        this->sexo = newSexo;
+    }
+
+    QString Paciente::getSexo()const{
+        return this->sexo;
+    }
+
     float Paciente::calcularIMC()const{
         return (peso/(altura*altura));
     }

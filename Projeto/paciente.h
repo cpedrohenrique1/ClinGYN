@@ -14,6 +14,14 @@ namespace PC
     public:
             Paciente();
             Paciente(QString nomeCompleto, int peso, float altura, QString sexo);
+            void setPeso(int newpeso);
+            int getPeso()const;
+            void setNome(QString newNome);
+            QString getNome()const;
+            void setAltura(float newAltura);
+            float getAltura()const;
+            void setSexo(QString newSexo);
+            QString getSexo()const;
             float calcularIMC()const;
             QString calcularFaixaRisco()const;
             float calcularPesoIdeal()const;
