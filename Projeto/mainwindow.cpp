@@ -38,7 +38,7 @@ void MainWindow::on_BotaoExecutar_clicked()
         ui->pesoInput->clear();
         ui->alturaInput->clear();
     } catch (QString &erro) {
-        QMessageBox::information(this, "ERRO ", erro);
+        QMessageBox::critical(this, "ERRO ", erro);
     }
 }
 
