@@ -16,13 +16,13 @@ namespace PC{
         sexo("")
     {
         this->nomeCompleto = nomeCompleto;
-        if (peso <= 0){
+        if (peso <= 0)
             throw QString("Peso menor ou igual a 0");
-        }
+
         this->peso = peso;
-        if (altura <= 0){
+        if (altura <= 0)
             throw QString("Altura menor ou igual a 0");
-        }
+
         this->altura = altura;
         this->sexo = sexo;
     }
@@ -46,9 +46,9 @@ namespace PC{
     }
 
     void Paciente::setPeso(int newPeso){
-        if (newPeso <= 0){
+        if (newPeso <= 0)
             throw QString("Peso nao pode ser menor ou igual a 0");
-        }
+
         this->peso = newPeso;
     }
 
@@ -79,7 +79,9 @@ namespace PC{
             return "obesidade";
         return "obesidade morbida";
     }
-    float Paciente::calcularPesoIdeal()const{
-        return (12.5);
+    QString Paciente::calcularPesoIdeal()const{
+        int minimo = 20*(this->altura*this->altura);
+        int maximo = 25*(this->altura*this->altura);
+        return (QString::number(minimo) + " e " + QString::number(maximo));
     }
 }
