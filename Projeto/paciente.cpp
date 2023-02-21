@@ -79,9 +79,11 @@ namespace PC{
             return "obesidade";
         return "obesidade morbida";
     }
-    QString Paciente::calcularPesoIdeal()const{
-        int minimo = 20*(this->altura*this->altura);
-        int maximo = 25*(this->altura*this->altura);
-        return (QString::number(minimo) + " e " + QString::number(maximo));
+    float Paciente::calcularPesoIdeal()const{
+        if (getSexo() == "Masculino")
+            return (72.7*altura-58);
+        if (getSexo() == "Feminino")
+            return (62.1*altura-44.7);
+        throw QString("Nao foi possivel calcular peso ideal, Sexo nao selecionado");
     }
 }

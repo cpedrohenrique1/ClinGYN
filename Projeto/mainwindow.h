@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <paciente.h>
 #include <QMessageBox>
+#include <arquivodados.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

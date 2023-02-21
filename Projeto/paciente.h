@@ -24,7 +24,7 @@ namespace PC
             QString getSexo()const;
             float calcularIMC()const;
             QString calcularFaixaRisco()const;
-            QString calcularPesoIdeal()const;
+            float calcularPesoIdeal()const;
     };
 }
 
