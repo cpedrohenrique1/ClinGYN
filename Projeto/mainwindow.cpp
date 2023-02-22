@@ -23,21 +23,22 @@ void MainWindow::on_BotaoExecutar_clicked()
         pessoa.setAltura(ui->alturaInput->text().toFloat());
         pessoa.setSexo(ui->SexoInput->currentText());
 
-        QString saida = "Clinica Sao Jose\n";
+        QString saida = "Clinica GYN\n";
         saida += "Dados do paciente\n";
         saida += "Nome: " + pessoa.getNome() + '\n';
         saida += "Peso: " + QString::number(pessoa.getPeso()) + '\n';
         saida += "Altura: " + QString::number(pessoa.getAltura()) + '\n';
-        saida += "Sexo: " + pessoa.getSexo() + "\n";
+        saida += "Sexo: " + pessoa.getSexo() + '\n';
         saida += "IMC: " + QString::number(pessoa.calcularIMC()) + '\n';
         saida += "Faixa de peso: " + pessoa.calcularFaixaRisco() + '\n';
         saida += "Peso ideal: " + QString::number(pessoa.calcularPesoIdeal()) + '\n';
+
         ui->SaidaTexto->setText(saida);
         ui->nomeCompletoInput->clear();
         ui->pesoInput->clear();
         ui->alturaInput->clear();
-    } catch (QString &erro) {
-        QMessageBox::critical(this, "ERRO ", erro);
+    } catch (QString &error) {
+        QMessageBox::critical(this, "ERRO ", error);
     }
 }
 
